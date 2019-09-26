@@ -3,13 +3,20 @@ import './App.css';
 import Form from "./components/Form";
 
 class App extends Component {
+  //This method will be responsible for making the API call 
+  //In the new React you can even declare a state without a constuctor function
+  //e is the event object in JS not React 
+  getRecipe = (e) => {
+    e.preventDefault();
+    console.log("Working!");
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Recipe Search</h1>
         </header>
-        <Form/>
+        <Form getRecipe={this.getRecipe}/>
       </div>
     );
   }
