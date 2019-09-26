@@ -5,7 +5,7 @@ import React from 'react';
 //so we simply pass an argument  
 const Form = props => (
     <form onSubmit={props.getRecipe}>
-        <input type="text"/>
+        <input type="text" name="recipeName"/>
         <button>Search</button>
     </form>
 );

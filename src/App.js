@@ -7,8 +7,9 @@ class App extends Component {
   //In the new React you can even declare a state without a constuctor function
   //e is the event object in JS not React 
   getRecipe = (e) => {
+    const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    console.log("Working!");
+    console.log(recipeName);
   }
   render() {
     return (
