@@ -10,6 +10,9 @@ const API_KEY = "499f59092da31cfd528fe53ff3119a93"
 
 
 class App extends Component {
+  state = {
+    recipes: []
+  }
   //This method will be responsible for making the API call 
   //In the new React you can even declare a state without a constuctor function
   //e is the event object in JS not React 
@@ -19,9 +22,10 @@ class App extends Component {
     e.preventDefault();
     const api_call = await fetch
     (`http://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=shredded%20chicken&count=10`);
-
     const data = await api_call.json();
-    console.log(data.recipes[0].recipe_id);
+    //console.log(data.recipes[0].recipe_id);
+    this.setState({recipes: data.recipes});
+    console.log(this.state.recipes);
   }
   render() {
     return (
@@ -30,6 +34,9 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe}/>
+        { this.state.recipes.map((recipe) => {
+          return <p key={recipe.recipe_id}>{recipe.title }</p>
+        } )}
       </div>
     );
   }
