@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from "./components/Form";
 import { async } from 'q';
+import Recipes from "./components/Recipes";
 
 //Always a good idea to store your imported data into a constant 
 const API_KEY = "499f59092da31cfd528fe53ff3119a93"
@@ -34,15 +35,7 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe}/>
-        { this.state.recipes.map((recipe) => {
-          return (
-            <div key={recipe.recipe_id}>
-              <img src={recipe.image_url} alt={recipe.title}></img>
-              <p>{recipe.title }</p>
-
-            </div>
-          );
-        } )}
+        <Recipes/>
       </div>
     );
   }
