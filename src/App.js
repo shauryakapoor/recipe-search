@@ -36,9 +36,9 @@ class App extends Component {
         <Form getRecipe={this.getRecipe}/>
         { this.state.recipes.map((recipe) => {
           return (
-            <div>
+            <div key={recipe.recipe_id}>
               <img src={recipe.image_url} alt={recipe.title}></img>
-              <p key={recipe.recipe_id}>{recipe.title }</p>
+              <p>{recipe.title }</p>
 
             </div>
           );
