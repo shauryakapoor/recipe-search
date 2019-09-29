@@ -10,7 +10,8 @@ class Recipe extends React.Component {
     componentDidMount = async () => {
         const title = this.props.location.state.recipe;
         const req = await fetch
-        (`http://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
+        (`http://cors-anywhere.herokuapp.com/https://www.food2fork.com`
+        + `/api/search?key=${API_KEY}&q=${title}`);
         const res = await req.json();
         console.log(res.recipes[0]);
     }
