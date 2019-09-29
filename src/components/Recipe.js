@@ -13,7 +13,7 @@ class Recipe extends React.Component {
         (`http://cors-anywhere.herokuapp.com/https://www.food2fork.com`
         + `/api/search?key=${API_KEY}&q=${title}`);
         const res = await req.json();
-        console.log(res);
+        console.log(res.recipes[0]);
     }
     render() {
         console.log(this.props);
