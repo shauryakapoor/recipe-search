@@ -1,5 +1,7 @@
 import React from 'react';
-import { async } from 'q';
+//import { async } from 'q';
+
+import { Link } from "react-router-dom";
 
 const API_KEY = "499f59092da31cfd528fe53ff3119a93";
 
@@ -37,7 +39,9 @@ class Recipe extends React.Component {
                             </span>
                         </p>
                         <button className="active-recipe__button">
-                            Go Home
+                            <Link to="/">
+                                Go Home
+                            </Link>
                         </button>
                     </div>
                 }
