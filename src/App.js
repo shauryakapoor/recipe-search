@@ -5,7 +5,7 @@ import { async } from 'q';
 import Recipes from "./components/Recipes";
 
 //Always a good idea to store your imported data into a constant 
-const API_KEY = "499f59092da31cfd528fe53ff3119a93"
+const API_KEY = "499f59092da31cfd528fe53ff3119a93";
 
 //https://www.food2fork.com/api/search?key=&q=shredded%20chicken&count=5
 
