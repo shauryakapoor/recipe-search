@@ -17,9 +17,13 @@ class Recipe extends React.Component {
         console.log(this.state.activeRecipe);
     }
     render() {
-        console.log(this.props);
+        const recipe = this.state.activeRecipe;
         return (
-            <div>Recipe Component!</div>
+            <div className="container">
+                <div className="active-recipe">
+                    <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title} />
+                </div>
+            </div>
         );
     }
 };
