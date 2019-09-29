@@ -12,8 +12,12 @@ const Recipes = (props) => (
               src={recipe.image_url}
               alt={recipe.title}/>
               <div className="recipe__text">
-                <h5>{ recipe.title }</h5>
+                <h5 className="recipe__title" >{ recipe.title }</h5>
+                <p className="recipe__subtitle">Publisher: <span>
+                    { recipe.publisher }
+                  </span></p>
               </div>
+              <button className="recipe__button" >View Recipe</button>
           </div>
         </div>
       );
